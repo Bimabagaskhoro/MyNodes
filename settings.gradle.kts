@@ -22,6 +22,7 @@ dependencyResolutionManagement {
 rootProject.name = "MyNode"
 include(":app")
 include(":common")
-project(":common").projectDir = file("common")
-include(":guest")
 include(":component")
+project(":common").projectDir = file("common")
+project(":component").projectDir = file("component")
+include(":guest")
