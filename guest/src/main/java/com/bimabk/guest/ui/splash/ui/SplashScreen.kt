@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.bimabk.common.extension.ScreenAttr
+import com.bimabk.component.ScreenAttr
 import com.bimabk.common.extension.UiState
 import com.bimabk.common.extension.onError
 import com.bimabk.common.extension.onLoading

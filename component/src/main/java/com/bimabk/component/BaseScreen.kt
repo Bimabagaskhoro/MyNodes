@@ -33,8 +33,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.ColorFilter.Companion.tint
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.bimabk.common.R
-import com.bimabk.common.extension.ScreenAttr
 
 val LocalActivity = staticCompositionLocalOf<ComponentActivity> { noLocalProvided() }
 
