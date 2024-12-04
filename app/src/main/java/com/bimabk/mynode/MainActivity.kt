@@ -1,47 +1,31 @@
 package com.bimabk.mynode
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.bimabk.mynode.ui.theme.MyNodeTheme
+import androidx.navigation.compose.rememberNavController
+import com.bimabk.di.AppModule
+import com.bimabk.component.theme.MyNodeTheme
+import com.bimabk.navigation.AppNavigation
+import org.koin.compose.KoinIsolatedContext
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        window.decorView.setBackgroundColor(Color.TRANSPARENT)
+
         setContent {
             MyNodeTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
+                val navController = rememberNavController()
+                KoinIsolatedContext(context = AppModule.koinApp) {
+                    AppNavigation(
+                        navController = navController
                     )
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MyNodeTheme {
-        Greeting("Android")
     }
 }

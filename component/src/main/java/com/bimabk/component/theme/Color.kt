@@ -1,4 +1,4 @@
-package com.bimabk.mynode.ui.theme
+package com.bimabk.component.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -23,3 +23,5 @@ rootProject.name = "MyNode"
 include(":app")
 include(":common")
 project(":common").projectDir = file("common")
+include(":guest")
+include(":component")
