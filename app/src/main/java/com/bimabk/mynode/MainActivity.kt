@@ -5,13 +5,21 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.navigation.compose.rememberNavController
-import com.bimabk.di.AppModule
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme.colorScheme
+import androidx.compose.material3.Surface
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.ui.Modifier
 import com.bimabk.component.theme.MyNodeTheme
-import com.bimabk.navigation.AppNavigation
+import com.bimabk.component.utils.LocalActivity
+import com.bimabk.mynode.di.AppModule
+import com.bimabk.mynode.navigation.AppNavigation
+import org.koin.android.ext.koin.androidContext
 import org.koin.compose.KoinIsolatedContext
+import org.koin.compose.getKoin
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -19,11 +27,17 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             MyNodeTheme {
-                val navController = rememberNavController()
-                KoinIsolatedContext(context = AppModule.koinApp) {
-                    AppNavigation(
-                        navController = navController
-                    )
+                CompositionLocalProvider(LocalActivity provides this) {
+                    Surface(modifier = Modifier.fillMaxSize(), color = colorScheme.background) {
+                        AppModule.koinApp.androidContext(this@MainActivity)
+                        KoinIsolatedContext(
+                            context = AppModule.koinApp
+                        ) {
+                            AppNavigation(
+                                myNodeNavGraphs = getKoin().get()
+                            )
+                        }
+                    }
                 }
             }
         }
