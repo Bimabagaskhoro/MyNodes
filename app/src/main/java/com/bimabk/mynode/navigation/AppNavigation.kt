@@ -7,7 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.bimabk.common.navigation.BaseNavigator
 import com.bimabk.navigation.MyNodeNavGraphs
-import com.bimabk.navigation.SplashNavGraphRoute
+import com.bimabk.navigation.section.SplashNavGraphRoute
 import kotlin.reflect.KClass
 
 @Composable

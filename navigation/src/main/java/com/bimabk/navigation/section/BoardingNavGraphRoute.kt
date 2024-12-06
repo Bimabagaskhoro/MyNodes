@@ -1,4 +1,4 @@
-package com.bimabk.navigation
+package com.bimabk.navigation.section
 
 import com.bimabk.common.navigation.BaseNavGraph
 import kotlinx.serialization.Serializable

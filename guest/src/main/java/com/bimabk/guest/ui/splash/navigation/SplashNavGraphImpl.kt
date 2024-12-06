@@ -6,8 +6,8 @@ import androidx.navigation.navigation
 import com.bimabk.common.navigation.BaseNavigator
 import com.bimabk.common.navigation.composableScreen
 import com.bimabk.guest.ui.splash.ui.SplashScreen
-import com.bimabk.navigation.SplashNavGraph
-import com.bimabk.navigation.SplashNavGraphRoute
+import com.bimabk.navigation.section.SplashNavGraph
+import com.bimabk.navigation.section.SplashNavGraphRoute
 
 class SplashNavGraphImpl : SplashNavGraph() {
     override fun buildGraph(
