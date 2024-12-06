@@ -1,6 +1,6 @@
 [versions]
-agp = "8.2.2"
-kotlin = "1.9.0"
+agp = "8.6.1"
+kotlin = "2.0.10"
 coreKtx = "1.13.1"
 appcompat = "1.7.0"
 material = "1.12.0"
@@ -27,6 +27,8 @@ testRule = "1.6.1"
 testServices = "1.5.0"
 junit = "4.13.2"
 junitVersion = "1.1.5"
+androidTools = "31.7.2"
+androidxComposeCompiler = "1.5.12"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -68,9 +70,18 @@ test-rule = { module = "androidx.test:rules", version.ref = "testRule" }
 test-services = { module = "androidx.test.services:test-services", version.ref = "testServices" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+jetbrains-compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+mynode-android-application = { id = "mynode.android.application", version = "unspecified" }
+mynode-android-application-compose = { id = "mynode.android.application.compose", version = "unspecified" }
+mynode-android-library = { id = "mynode.android.library", version = "unspecified" }
+mynode-android-library-compose = { id = "mynode.android.library.compose", version = "unspecified" }
+mynode-android-feature = { id = "mynode.android.feature", version = "unspecified" }
