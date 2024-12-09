@@ -3,6 +3,7 @@ package com.bimabk.guest.ui.splash.ui
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -15,6 +16,7 @@ import com.bimabk.component.base.BaseScreen
 import com.bimabk.component.base.ScreenAttr
 import com.bimabk.component.theme.MyNodeTheme
 import com.bimabk.guest.ui.splash.model.SplashModel
+import kotlinx.coroutines.delay
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
@@ -54,6 +56,10 @@ fun SplashContent(
                 fontWeight = FontWeight.SemiBold,
                 style = MaterialTheme.typography.bodySmall
             )
+            LaunchedEffect(Unit) {
+                delay(500)
+                onNavigateToBoarding()
+            }
         }
         .onError {
 

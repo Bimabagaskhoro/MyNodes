@@ -16,7 +16,6 @@ import com.bimabk.mynode.di.AppModule
 import com.bimabk.mynode.navigation.AppNavigation
 import org.koin.android.ext.koin.androidContext
 import org.koin.compose.KoinIsolatedContext
-import org.koin.compose.getKoin
 
 class MainActivity : ComponentActivity() {
 
@@ -33,9 +32,7 @@ class MainActivity : ComponentActivity() {
                         KoinIsolatedContext(
                             context = AppModule.koinApp
                         ) {
-                            AppNavigation(
-                                myNodeNavGraphs = getKoin().get()
-                            )
+                            AppNavigation()
                         }
                     }
                 }
