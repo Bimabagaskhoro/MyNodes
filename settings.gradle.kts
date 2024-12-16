@@ -1,4 +1,10 @@
 @file:Suppress("UnstableApiUsage")
+
+include(":oneclick")
+
+
+include(":explorer")
+
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 rootProject.name = "MyNode"
@@ -38,5 +44,6 @@ include(":common")
 include(":component")
 project(":common").projectDir = file("common")
 project(":component").projectDir = file("component")
-include(":guest")
 include(":navigation")
+include(":guest")
+include(":main")

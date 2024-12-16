@@ -10,6 +10,7 @@ import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
+import androidx.navigation.compose.rememberNavController
 import com.bimabk.component.theme.MyNodeTheme
 import com.bimabk.component.utils.LocalActivity
 import com.bimabk.mynode.di.AppModule
@@ -32,7 +33,8 @@ class MainActivity : ComponentActivity() {
                         KoinIsolatedContext(
                             context = AppModule.koinApp
                         ) {
-                            AppNavigation()
+                            val navController = rememberNavController()
+                            AppNavigation(navController = navController)
                         }
                     }
                 }

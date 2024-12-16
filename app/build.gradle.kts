@@ -34,4 +34,5 @@ dependencies {
     implementation(project(":component"))
     implementation(project(":navigation"))
     implementation(project(":guest"))
+    implementation(project(":main"))
 }

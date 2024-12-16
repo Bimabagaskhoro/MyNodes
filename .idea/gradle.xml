@@ -27,8 +27,11 @@
             <option value="$PROJECT_DIR$/build-logic/convention" />
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/component" />
+            <option value="$PROJECT_DIR$/explorer" />
             <option value="$PROJECT_DIR$/guest" />
+            <option value="$PROJECT_DIR$/main" />
             <option value="$PROJECT_DIR$/navigation" />
+            <option value="$PROJECT_DIR$/oneclick" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

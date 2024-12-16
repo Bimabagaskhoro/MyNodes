@@ -12,7 +12,7 @@ fun NavGraphBuilder.boardingNavGraph(
     composableScreen<BoardingRoute> {
 
         BoardingScreen(
-
+            onNavigateToGuest = {}
         )
     }
 }
